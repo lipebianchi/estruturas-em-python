@@ -1,4 +1,4 @@
-from utils.fifo import queueFifo
+from .utils.fifo import queueFifo
 
 def createFifo():
     fila = queueFifo()

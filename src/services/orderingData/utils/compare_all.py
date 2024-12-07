@@ -4,8 +4,8 @@ from ..insertion_sort import insertion_sort
 from ..shell_sort import shell_sort
 from ..merge_sort import merge_sort
 from ..quick_sort import quick_sort
-from time_spend import timeSpent
-from random_array import randomArray
+from .time_spend import timeSpent
+from .random_array import randomArray
 
 def compare_all():
 
@@ -18,11 +18,11 @@ def compare_all():
         6: quick_sort
     }
 
-    print("Choose the size of your array: ")
+    print("Escolha o tamanho do array: ")
     t = int(input())
     l = randomArray(t)
     
-    print(f"\nUNORDERED ARRAY: {l}\n")
+    print(f"\nArray desordenado: {l}\n")
 
     cout = 1
     for i, method in methods.items():
@@ -30,5 +30,5 @@ def compare_all():
             timeSpent(method, l, 1)
         else:
             time = timeSpent(method, l)
-            print(f"time spent in {method.__name__}: {time:.6f} seconds\n")
+            print(f"tempo gasto em {method.__name__}: {time:.6f} seconds\n")
         cout+=1

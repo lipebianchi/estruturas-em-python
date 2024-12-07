@@ -9,9 +9,9 @@ class stackLifo:
 
 
     def pop(self):
-        if len(self.fila) != 0:
+        if len(self.stack) != 0:
             self._size -= 1
-            self.fila.pop(len(self.fila) - 1)
+            self.stack.pop(len(self.stack) - 1)
         else:
             raise IndexError('the queue is empty')
         

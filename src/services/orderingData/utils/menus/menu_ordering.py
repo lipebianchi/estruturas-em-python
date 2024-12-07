@@ -7,11 +7,12 @@ from ...quick_sort import quick_sort
 from ..random_array import randomArray
 from ..compare_all import compare_all
 from ..time_spend import timeSpent
-from menu_compare import menuCompare
+from .menu_compare import menuCompare
+from ....terminal_clear.terminal_clear import clear_terminal
 
 
 def menu_ordering():
-    print("Choose which method you want to use: \n1 - Bubble Sort\n2 - Select Sort\n3 - Insertion Sort\n4 - Shell Sort\n5 - Merge Sort\n6 - Quick Sort\n7 - Compare methods\n8 - Compare all methods\n")
+    print("Escolha qual método de ordenação deseja usar: \n0 - Sair\n1 - Bubble Sort\n2 - Select Sort\n3 - Insertion Sort\n4 - Shell Sort\n5 - Merge Sort\n6 - Quick Sort\n7 - Compare methods\n8 - Compare all methods\n")
 
     methods = {
         1: bubble_sort,
@@ -25,17 +26,22 @@ def menu_ordering():
 
     c = int(input())
 
+    if c == 0:
+        return
+
     if not c == 7 and not c == 8:
-        print("Choose the size of your array\n")
+        print("Escolha o tamanho do array\n")
         t = int(input())
         l = randomArray(t)
         f = methods[c]
         time = timeSpent(f, l)
-        print(f"time spent in {f.__name__}: {time:.6f} seconds")
+        print(f"tempo gasto em {f.__name__}: {time:.6f} seconds")
     elif c == 7:
         chooses = []
+        clear_terminal()
         menuCompare(chooses)
     else:
+        clear_terminal()
         compare_all()
 
     

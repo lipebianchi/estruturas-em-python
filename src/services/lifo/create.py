@@ -1,4 +1,4 @@
-from utils.lifo import stackLifo
+from .utils.lifo import stackLifo
 
 def createStack():
     stack = stackLifo()

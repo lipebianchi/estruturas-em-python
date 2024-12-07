@@ -1,6 +1,7 @@
-from services.linkedList.create import createLinkedList
+from services.menus.menu_main import menu
 
-lista = createLinkedList()
+print("BEM VINDO AO PROJETO DE ESTRUTURA DE DADOS!")
+print("AQUI, ESTAMOS IMPLEMENTANDO AS SEGUINTES ESTRUTURAS DE DADOS: LISTA, FILA, PILHA, ORDENAÇÃO DE DADOS E ALGORÍTMOS DE BUSCA")
+print("ESCOLHA QUAL DESEJA COMEÇAR A TESTAR: ")
 
-lista.append(7)
-print(lista)
+menu()
